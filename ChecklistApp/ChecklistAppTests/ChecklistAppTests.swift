@@ -19,6 +19,16 @@ final class ChecklistAppTests: XCTestCase {
         let count = TemplateSeeder.countTemplates(context)
         XCTAssertGreaterThan(count, 0)
     }
+
+    func testDailyGenerationCreatesItemsFromTemplates() throws {
+        let context = try InMemoryModelContextFactory.make()
+        TemplateSeeder.seedIfNeeded(context)
+
+        DailyGenerator.generateIfNeeded(for: Date(), context: context)
+
+        let count = DailyGenerator.countDayItems(context)
+        XCTAssertGreaterThan(count, 0)
+    }
 }
 
 enum InMemoryModelContextFactory {

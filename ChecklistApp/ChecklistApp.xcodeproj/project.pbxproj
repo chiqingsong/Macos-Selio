@@ -16,6 +16,7 @@
 		AA0000000000000000000007 /* SleepEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000017 /* SleepEntry.swift */; };
 		AA0000000000000000000008 /* TemplateSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* TemplateSeeder.swift */; };
 		AA0000000000000000000009 /* ChecklistAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* ChecklistAppTests.swift */; };
+		AA0000000000000000000010 /* DailyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* DailyGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		AA0000000000000000000017 /* SleepEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepEntry.swift; sourceTree = "<group>"; };
 		AA0000000000000000000018 /* TemplateSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateSeeder.swift; sourceTree = "<group>"; };
 		AA0000000000000000000019 /* ChecklistAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistAppTests.swift; sourceTree = "<group>"; };
+		AA0000000000000000000020 /* DailyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGenerator.swift; sourceTree = "<group>"; };
 		AA0000000000000000000021 /* ChecklistApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChecklistApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000000000000000000022 /* ChecklistAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			sourceTree = "<group>";
 			children = (
 				AA0000000000000000000018 /* TemplateSeeder.swift */,
+				AA0000000000000000000020 /* DailyGenerator.swift */,
 			);
 		};
 		AA0000000000000000000508 /* ChecklistAppTests */ = {
@@ -215,6 +218,7 @@
 				AA0000000000000000000006 /* DayItem.swift in Sources */,
 				AA0000000000000000000007 /* SleepEntry.swift in Sources */,
 				AA0000000000000000000008 /* TemplateSeeder.swift in Sources */,
+				AA0000000000000000000010 /* DailyGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
