@@ -28,37 +28,34 @@ struct TodayView: View {
         todayItems.filter { $0.section == .todo && $0.status != .removed }
     }
 
+    private var visibleItems: [DayItem] {
+        reviewItems + todoItems
+    }
+
     private var counts: CompletionCounts {
         CompletionCounter.count(todayItems)
     }
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: AppTheme.Layout.sectionSpacing) {
                 HStack(alignment: .firstTextBaseline) {
                     Text("Today")
-                        .font(.system(size: 34, weight: .regular, design: .monospaced))
+                        .font(.system(size: 34, design: .monospaced))
+                        .foregroundStyle(AppTheme.Palette.ink)
                     Spacer()
                     Text("\(counts.done)/\(counts.total) done")
-                        .font(.system(size: 18, weight: .regular, design: .monospaced))
-                        .foregroundStyle(.secondary)
+                        .font(.system(.title3, design: .monospaced))
+                        .foregroundStyle(AppTheme.Palette.ink)
                 }
 
-                ChecklistSectionView(
-                    title: "Review",
-                    items: reviewItems,
-                    onToggle: toggle,
-                    onRemove: markRemoved
-                )
+                SleepRecapRowView()
 
-                ChecklistSectionView(
-                    title: "Todo",
-                    items: todoItems,
-                    onToggle: toggle,
-                    onRemove: markRemoved
-                )
+                ChecklistSectionView(items: visibleItems, onToggle: toggle, onRemove: markRemoved)
+
+                WeeklyProgressView(items: visibleItems)
             }
-            .padding(28)
+            .padding(AppTheme.Layout.innerPadding)
         }
         .onAppear {
             DailyGenerator.generateIfNeeded(for: today, context: modelContext)

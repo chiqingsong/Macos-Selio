@@ -20,67 +20,49 @@ struct SettingsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 Text("Settings")
-                    .font(.system(size: 34, weight: .regular, design: .monospaced))
+                    .font(.system(size: 34, design: .monospaced))
+                    .foregroundStyle(AppTheme.Palette.ink)
 
-                templateEditor(
+                Text("Keep the app lean. Templates live here, the ritual stays on the main tabs.")
+                    .font(.system(.body, design: .monospaced))
+                    .foregroundStyle(AppTheme.Palette.secondaryInk)
+
+                TemplateEditorSectionView(
                     title: "Review Template",
                     items: reviewTemplates,
-                    newTitle: $newReviewTitle,
-                    section: .review
+                    draftTitle: $newReviewTitle,
+                    onAdd: addReviewTemplate,
+                    onDelete: deleteReviewTemplate
                 )
 
-                templateEditor(
+                TemplateEditorSectionView(
                     title: "Todo Template",
                     items: todoTemplates,
-                    newTitle: $newTodoTitle,
-                    section: .todo
+                    draftTitle: $newTodoTitle,
+                    onAdd: addTodoTemplate,
+                    onDelete: deleteTodoTemplate
                 )
             }
-            .padding(28)
+            .padding(AppTheme.Layout.innerPadding)
         }
     }
 
-    private func templateEditor(
-        title: String,
-        items: [TemplateItem],
-        newTitle: Binding<String>,
-        section: ChecklistSection
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.system(size: 18, weight: .regular, design: .monospaced))
+    private func addReviewTemplate() {
+        addTemplate(title: newReviewTitle, section: .review)
+        newReviewTitle = ""
+    }
 
-            ForEach(items) { item in
-                HStack {
-                    Text(item.title)
-                        .font(.system(size: 15, weight: .regular, design: .monospaced))
-                    Spacer()
-                    Button("Delete") {
-                        modelContext.delete(item)
-                        normalizeSortOrder(for: section)
-                        try? modelContext.save()
-                    }
-                    .buttonStyle(.borderless)
-                    .foregroundStyle(.secondary)
-                }
-                .padding(.horizontal, 14)
-                .padding(.vertical, 10)
-                .background(
-                    RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .fill(Color.white.opacity(0.68))
-                )
-            }
+    private func addTodoTemplate() {
+        addTemplate(title: newTodoTitle, section: .todo)
+        newTodoTitle = ""
+    }
 
-            HStack {
-                TextField("Add placeholder", text: newTitle)
-                    .textFieldStyle(.roundedBorder)
-                Button("Add") {
-                    addTemplate(title: newTitle.wrappedValue, section: section)
-                    newTitle.wrappedValue = ""
-                }
-                .disabled(newTitle.wrappedValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-            }
-        }
+    private func deleteReviewTemplate(_ item: TemplateItem) {
+        deleteTemplate(item, section: .review)
+    }
+
+    private func deleteTodoTemplate(_ item: TemplateItem) {
+        deleteTemplate(item, section: .todo)
     }
 
     private func addTemplate(title: String, section: ChecklistSection) {
@@ -91,6 +73,12 @@ struct SettingsView: View {
 
         let sortOrder = templates.filter { $0.section == section }.count
         modelContext.insert(TemplateItem(title: cleanedTitle, section: section, sortOrder: sortOrder))
+        try? modelContext.save()
+    }
+
+    private func deleteTemplate(_ item: TemplateItem, section: ChecklistSection) {
+        modelContext.delete(item)
+        normalizeSortOrder(for: section)
         try? modelContext.save()
     }
 
