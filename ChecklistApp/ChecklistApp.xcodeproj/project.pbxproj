@@ -17,6 +17,11 @@
 		AA0000000000000000000008 /* TemplateSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* TemplateSeeder.swift */; };
 		AA0000000000000000000009 /* ChecklistAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* ChecklistAppTests.swift */; };
 		AA0000000000000000000010 /* DailyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* DailyGenerator.swift */; };
+		AA0000000000000000000023 /* CompletionCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000033 /* CompletionCounter.swift */; };
+		AA0000000000000000000024 /* ChecklistSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000034 /* ChecklistSectionView.swift */; };
+		AA0000000000000000000025 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000035 /* TodayView.swift */; };
+		AA0000000000000000000026 /* YesterdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000036 /* YesterdayView.swift */; };
+		AA0000000000000000000027 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000037 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		AA0000000000000000000020 /* DailyGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGenerator.swift; sourceTree = "<group>"; };
 		AA0000000000000000000021 /* ChecklistApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChecklistApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000000000000000000022 /* ChecklistAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChecklistAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000033 /* CompletionCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionCounter.swift; sourceTree = "<group>"; };
+		AA0000000000000000000034 /* ChecklistSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistSectionView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000035 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000036 /* YesterdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesterdayView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000037 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +90,7 @@
 				AA0000000000000000000012 /* ContentView.swift */,
 				AA0000000000000000000503 /* Models */,
 				AA0000000000000000000504 /* Data */,
+				AA0000000000000000000505 /* Views */,
 				AA0000000000000000000013 /* Assets.xcassets */,
 			);
 		};
@@ -101,6 +112,18 @@
 			children = (
 				AA0000000000000000000018 /* TemplateSeeder.swift */,
 				AA0000000000000000000020 /* DailyGenerator.swift */,
+			);
+		};
+		AA0000000000000000000505 /* Views */ = {
+			isa = PBXGroup;
+			path = Views;
+			sourceTree = "<group>";
+			children = (
+				AA0000000000000000000033 /* CompletionCounter.swift */,
+				AA0000000000000000000034 /* ChecklistSectionView.swift */,
+				AA0000000000000000000035 /* TodayView.swift */,
+				AA0000000000000000000036 /* YesterdayView.swift */,
+				AA0000000000000000000037 /* SettingsView.swift */,
 			);
 		};
 		AA0000000000000000000508 /* ChecklistAppTests */ = {
@@ -219,6 +242,11 @@
 				AA0000000000000000000007 /* SleepEntry.swift in Sources */,
 				AA0000000000000000000008 /* TemplateSeeder.swift in Sources */,
 				AA0000000000000000000010 /* DailyGenerator.swift in Sources */,
+				AA0000000000000000000023 /* CompletionCounter.swift in Sources */,
+				AA0000000000000000000024 /* ChecklistSectionView.swift in Sources */,
+				AA0000000000000000000025 /* TodayView.swift in Sources */,
+				AA0000000000000000000026 /* YesterdayView.swift in Sources */,
+				AA0000000000000000000027 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

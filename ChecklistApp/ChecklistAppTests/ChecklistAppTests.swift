@@ -29,6 +29,28 @@ final class ChecklistAppTests: XCTestCase {
         let count = DailyGenerator.countDayItems(context)
         XCTAssertGreaterThan(count, 0)
     }
+
+    func testCompletionCountsExcludeRemoved() {
+        let items = [
+            DayItem(title: "A", section: .review, status: .done, date: Date()),
+            DayItem(title: "B", section: .review, status: .removed, date: Date()),
+        ]
+
+        let counts = CompletionCounter.count(items)
+
+        XCTAssertEqual(counts.done, 1)
+        XCTAssertEqual(counts.total, 1)
+    }
+
+    func testSleepEntryDefaultIsFalse() {
+        let entry = SleepEntry(date: Date(), sleptBeforeMidnight: false)
+        XCTAssertFalse(entry.sleptBeforeMidnight)
+    }
+
+    func testTemplateItemSortOrder() {
+        let item = TemplateItem(title: "X", section: .todo, sortOrder: 2)
+        XCTAssertEqual(item.sortOrder, 2)
+    }
 }
 
 enum InMemoryModelContextFactory {
