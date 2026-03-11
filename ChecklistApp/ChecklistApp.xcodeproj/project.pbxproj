@@ -20,7 +20,6 @@
 		AA0000000000000000000023 /* CompletionCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000033 /* CompletionCounter.swift */; };
 		AA0000000000000000000024 /* ChecklistSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000034 /* ChecklistSectionView.swift */; };
 		AA0000000000000000000025 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000035 /* TodayView.swift */; };
-		AA0000000000000000000026 /* YesterdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000036 /* YesterdayView.swift */; };
 		AA0000000000000000000027 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000037 /* SettingsView.swift */; };
 		AA0000000000000000000028 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000038 /* AppTheme.swift */; };
 		AA0000000000000000000029 /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000039 /* RootTab.swift */; };
@@ -61,7 +60,6 @@
 		AA0000000000000000000033 /* CompletionCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionCounter.swift; sourceTree = "<group>"; };
 		AA0000000000000000000034 /* ChecklistSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistSectionView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000035 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
-		AA0000000000000000000036 /* YesterdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesterdayView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000037 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000038 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		AA0000000000000000000039 /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
@@ -285,7 +283,6 @@
 				AA0000000000000000000023 /* CompletionCounter.swift in Sources */,
 				AA0000000000000000000024 /* ChecklistSectionView.swift in Sources */,
 				AA0000000000000000000025 /* TodayView.swift in Sources */,
-				AA0000000000000000000026 /* YesterdayView.swift in Sources */,
 				AA0000000000000000000027 /* SettingsView.swift in Sources */,
 				AA0000000000000000000028 /* AppTheme.swift in Sources */,
 				AA0000000000000000000029 /* RootTab.swift in Sources */,
