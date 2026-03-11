@@ -13,28 +13,38 @@ struct AppShellView<Content: View>: View {
         ZStack {
             LinearGradient(
                 colors: [AppTheme.Palette.skylineTop, AppTheme.Palette.skylineBottom],
-                startPoint: .top,
-                endPoint: .bottom
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
 
-            RoundedRectangle(cornerRadius: AppTheme.Layout.windowCorner)
-                .fill(AppTheme.Palette.windowPaper)
-                .frame(width: AppTheme.Layout.contentWidth, height: AppTheme.Layout.contentHeight)
-                .overlay(alignment: .top) {
+            RadialGradient(
+                colors: [AppTheme.Palette.skylineGlow, .clear],
+                center: .top,
+                startRadius: 40,
+                endRadius: 560
+            )
+            .ignoresSafeArea()
+
+            VStack(spacing: 0) {
+                AppTrafficLightsView()
+                    .padding(.top, 18)
+                    .padding(.leading, 18)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                VStack(spacing: 0) {
                     AppNavigationBarView(selectedTab: $selectedTab)
-                }
-                .overlay(alignment: .bottom) {
+
                     content
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .padding(.top, 120)
                         .background(AppTheme.Palette.panelFill)
-                        .clipShape(
-                            RoundedRectangle(cornerRadius: AppTheme.Layout.windowCorner)
-                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 }
-                .shadow(color: .black.opacity(0.08), radius: 24, y: 18)
-                .padding(AppTheme.Layout.outerPadding)
+            }
+            .frame(width: AppTheme.Layout.contentWidth, height: AppTheme.Layout.contentHeight)
+            .background(AppTheme.Palette.windowPaper)
+            .clipShape(RoundedRectangle(cornerRadius: AppTheme.Layout.windowCorner))
+            .shadow(color: .black.opacity(0.12), radius: 28, y: 16)
+            .padding(AppTheme.Layout.outerPadding)
         }
     }
 }

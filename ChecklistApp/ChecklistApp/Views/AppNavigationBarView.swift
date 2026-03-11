@@ -6,7 +6,7 @@ struct AppNavigationBarView: View {
     var body: some View {
         VStack(spacing: 22) {
             Text(Date.now.formatted(.dateTime.weekday(.wide).month(.abbreviated).day()))
-                .font(.system(.title2, design: .monospaced))
+                .font(AppTheme.Typography.mono(19))
                 .foregroundStyle(AppTheme.Palette.secondaryInk)
 
             HStack(spacing: 18) {
@@ -15,11 +15,11 @@ struct AppNavigationBarView: View {
                         selectedTab = tab
                     })
                     .buttonStyle(.plain)
-                    .font(.system(.title3, design: .monospaced))
+                    .font(AppTheme.Typography.mono(18))
                     .foregroundStyle(selectedTab == tab ? AppTheme.Palette.accent : AppTheme.Palette.secondaryInk)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-                    .background(selectedTab == tab ? AppTheme.Palette.accentMuted : Color.clear)
+                    .padding(.vertical, 12)
+                    .background(selectedTab == tab ? AppTheme.Palette.accentMuted : AppTheme.Palette.headerPaper.opacity(0.001))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
             }
@@ -27,6 +27,6 @@ struct AppNavigationBarView: View {
         .padding(.top, 18)
         .padding(.horizontal, 34)
         .padding(.bottom, 24)
-        .background(AppTheme.Palette.windowPaper)
+        .background(AppTheme.Palette.headerPaper)
     }
 }

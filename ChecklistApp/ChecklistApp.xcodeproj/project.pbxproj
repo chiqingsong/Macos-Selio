@@ -32,6 +32,7 @@
 		AA0000000000000000000049 /* TemplateEditorSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000050 /* TemplateEditorSectionView.swift */; };
 		AA0000000000000000000051 /* FranklinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000052 /* FranklinData.swift */; };
 		AA0000000000000000000053 /* WeeklyProgressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000054 /* WeeklyProgressRow.swift */; };
+		AA0000000000000000000055 /* AppTrafficLightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000056 /* AppTrafficLightsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		AA0000000000000000000050 /* TemplateEditorSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateEditorSectionView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000052 /* FranklinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranklinData.swift; sourceTree = "<group>"; };
 		AA0000000000000000000054 /* WeeklyProgressRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyProgressRow.swift; sourceTree = "<group>"; };
+		AA0000000000000000000056 /* AppTrafficLightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTrafficLightsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			sourceTree = "<group>";
 			children = (
 				AA0000000000000000000033 /* CompletionCounter.swift */,
+				AA0000000000000000000056 /* AppTrafficLightsView.swift */,
 				AA0000000000000000000034 /* ChecklistSectionView.swift */,
 				AA0000000000000000000041 /* AppNavigationBarView.swift */,
 				AA0000000000000000000042 /* AppShellView.swift */,
@@ -295,6 +298,7 @@
 				AA0000000000000000000049 /* TemplateEditorSectionView.swift in Sources */,
 				AA0000000000000000000051 /* FranklinData.swift in Sources */,
 				AA0000000000000000000053 /* WeeklyProgressRow.swift in Sources */,
+				AA0000000000000000000055 /* AppTrafficLightsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
